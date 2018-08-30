@@ -5,6 +5,10 @@ import "./App.css";
 import logo from "./logo.svg";
 
 class App extends React.Component {
+  public handleClick = async () => {
+    fetch("/.netlify/functions/hello");
+  };
+
   public render() {
     return (
       <div className="App">
@@ -15,7 +19,7 @@ class App extends React.Component {
         <p className="App-intro">
           To get started, edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Button>Hey ima button</Button>
+        <Button onClick={this.handleClick}>Hey ima button</Button>
       </div>
     );
   }
